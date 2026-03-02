@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Math Test - Rao Academy</title>
+<style>
+body{
+font-family: Arial;
+background:#020617;
+color:white;
+margin:0;
+padding:20px;
+}
+h1{
+text-align:center;
+color:gold;
+}
+.question{
+background:#1e293b;
+padding:20px;
+margin:15px 0;
+border-radius:10px;
+}
+button{
+margin-top:20px;
+padding:12px 25px;
+font-size:18px;
+background:gold;
+color:black;
+border:none;
+border-radius:8px;
+cursor:pointer;
+display:block;
+margin-left:auto;
+margin-right:auto;
+}
+.result{
+text-align:center;
+font-size:22px;
+margin-top:20px;
+color:#38bdf8;
+}
+</style>
+</head>
+<body>
+
+<h1>Rao Academy - Mathematics Test</h1>
+
+<form id="quizForm">
+
+<div class="question">
+<p>1. What is 25 + 17?</p>
+<input type="radio" name="q1" value="a"> 40<br>
+<input type="radio" name="q1" value="b"> 42<br>
+<input type="radio" name="q1" value="c"> 45<br>
+</div>
+
+<div class="question">
+<p>2. What is 12 × 5?</p>
+<input type="radio" name="q2" value="a"> 50<br>
+<input type="radio" name="q2" value="b"> 60<br>
+<input type="radio" name="q2" value="c"> 55<br>
+</div>
+
+<div class="question">
+<p>3. Square of 9 is?</p>
+<input type="radio" name="q3" value="a"> 72<br>
+<input type="radio" name="q3" value="b"> 81<br>
+<input type="radio" name="q3" value="c"> 99<br>
+</div>
+
+<button type="button" onclick="submitTest()">Submit Test</button>
+</form>
+
+<div class="result" id="result"></div>
+
+<script>
+function submitTest(){
+let score = 0;
+
+if(document.querySelector('input[name="q1"]:checked')?.value === "b") score++;
+if(document.querySelector('input[name="q2"]:checked')?.value === "b") score++;
+if(document.querySelector('input[name="q3"]:checked')?.value === "b") score++;
+
+document.getElementById("result").innerHTML =
+"Your Score: " + score + " / 3";
+}
+</script>
+
+</body>
+</html>
