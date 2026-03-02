@@ -15,7 +15,7 @@ header{
 background:#020617;
 padding:20px;
 text-align:center;
-font-size:24px;
+font-size:26px;
 color:gold;
 font-weight:bold;
 }
@@ -23,18 +23,23 @@ font-weight:bold;
 padding:20px;
 text-align:center;
 }
+.welcome{
+font-size:24px;
+margin-top:10px;
+color:#38bdf8;
+}
 .card{
 background:#1e293b;
 margin:15px auto;
-padding:20px;
+padding:25px;
 border-radius:12px;
-max-width:400px;
+max-width:420px;
 font-size:18px;
-box-shadow:0 5px 20px rgba(0,0,0,0.4);
+box-shadow:0 6px 25px rgba(0,0,0,0.4);
 }
 button{
-margin-top:10px;
-padding:10px 20px;
+margin-top:12px;
+padding:12px 25px;
 font-size:16px;
 background:gold;
 color:black;
@@ -42,44 +47,84 @@ border:none;
 border-radius:8px;
 cursor:pointer;
 font-weight:bold;
+width:80%;
 }
 button:hover{
 background:#ffd700;
+}
+.logout{
+background:#ef4444;
+color:white;
+}
+.logout:hover{
+background:#dc2626;
 }
 </style>
 </head>
 <body>
 
-<header>Rao Academy - Student Dashboard</header>
+<header>Rao Academy - Student Dashboard 🎓</header>
 
 <div class="container">
-<h2>Welcome to Your Dashboard 🎓</h2>
+
+<h2 id="welcomeText" class="welcome">Welcome to Your Dashboard 🎓</h2>
 
 <div class="card">
-📘 Mathematics Tests
+📘 Mathematics Test  
 <br>
-<button>Start Math Test</button>
-</div>
-
-<div class="card">
-🧠 Reasoning Tests
-<br>
-<button>Start Reasoning Test</button>
+<button onclick="startMath()">Start Math Test</button>
 </div>
 
 <div class="card">
-🌍 General Awareness Tests
+🧠 Reasoning Test  
 <br>
-<button>Start GA Test</button>
+<button onclick="comingSoon()">Start Reasoning Test</button>
 </div>
 
 <div class="card">
-📖 English Tests
+🌍 General Awareness Test  
 <br>
-<button>Start English Test</button>
+<button onclick="comingSoon()">Start GA Test</button>
+</div>
+
+<div class="card">
+📖 English Test  
+<br>
+<button onclick="comingSoon()">Start English Test</button>
+</div>
+
+<div class="card">
+<button class="logout" onclick="logout()">Logout</button>
 </div>
 
 </div>
+
+<script>
+// Show student name from signup
+let studentName = localStorage.getItem("studentName");
+
+if(studentName && studentName.trim() !== ""){
+document.getElementById("welcomeText").innerHTML =
+"Welcome, " + studentName + " 🎓";
+}
+
+// Start Math Test
+function startMath(){
+window.location.href = "math-test.html";
+}
+
+// Coming soon alert for other subjects
+function comingSoon(){
+alert("This test will be added in next upgrade.");
+}
+
+// Logout system
+function logout(){
+localStorage.removeItem("studentName");
+localStorage.removeItem("studentEmail");
+window.location.href = "login.html";
+}
+</script>
 
 </body>
 </html>
