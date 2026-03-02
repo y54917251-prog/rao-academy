@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login - Rao Academy</title>
+<style>
+body{
+margin:0;
+font-family:Arial, sans-serif;
+background:linear-gradient(135deg,#020617,#0f172a);
+color:white;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+.container{
+background:#1e293b;
+padding:40px;
+border-radius:12px;
+width:90%;
+max-width:350px;
+text-align:center;
+box-shadow:0 10px 30px rgba(0,0,0,0.5);
+}
+h2{
+color:gold;
+margin-bottom:10px;
+}
+input{
+width:100%;
+padding:12px;
+margin:10px 0;
+border:none;
+border-radius:8px;
+font-size:16px;
+}
+button{
+width:100%;
+padding:12px;
+margin-top:15px;
+background:gold;
+color:black;
+border:none;
+border-radius:8px;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+}
+button:hover{
+background:#ffd700;
+}
+.link{
+margin-top:15px;
+font-size:14px;
+}
+a{
+color:#38bdf8;
+text-decoration:none;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+<h2>Rao Academy</h2>
+<p>Student Login</p>
+
+<input type="email" placeholder="Enter Email" required>
+<input type="password" placeholder="Enter Password" required>
+
+<button onclick="login()">Login</button>
+
+<div class="link">
+Don't have an account? <a href="signup.html">Sign Up</a>
+</div>
+</div>
+
+<script>
+function login(){
+alert("Login system will be connected with dashboard in next upgrade.");
+}
+</script>
+
+</body>
+</html>
