@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Math Test - Rao Academy</title>
+
+<style>
+body{
+font-family: Arial;
+background:#020617;
+color:white;
+margin:0;
+padding:20px;
+}
+
+h1{
+text-align:center;
+color:gold;
+}
+
+.timer{
+text-align:center;
+font-size:22px;
+color:#38bdf8;
+margin-bottom:20px;
+font-weight:bold;
+}
+
+.question{
+background:#1e293b;
+padding:20px;
+margin:15px 0;
+border-radius:12px;
+}
+
+button{
+margin-top:25px;
+padding:14px 30px;
+font-size:18px;
+background:gold;
+color:black;
+border:none;
+border-radius:8px;
+cursor:pointer;
+display:block;
+margin-left:auto;
+margin-right:auto;
+font-weight:bold;
+}
+
+.result{
+text-align:center;
+font-size:24px;
+margin-top:25px;
+color:#22c55e;
+font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Rao Academy - Mathematics Mock Test</h1>
+<div class="timer" id="timer">Time Left: 60 sec</div>
+
+<form id="quizForm">
+
+<div class="question">
+<p>1. What is 25 + 17?</p>
+<label><input type="radio" name="q1" value="a"> 40</label><br>
+<label><input type="radio" name="q1" value="b"> 42</label><br>
+<label><input type="radio" name="q1" value="c"> 45</label>
+</div>
+
+<div class="question">
+<p>2. What is 12 × 5?</p>
+<label><input type="radio" name="q2" value="a"> 50</label><br>
+<label><input type="radio" name="q2" value="b"> 60</label><br>
+<label><input type="radio" name="q2" value="c"> 55</label>
+</div>
+
+<div class="question">
+<p>3. Square of 9 is?</p>
+<label><input type="radio" name="q3" value="a"> 72</label><br>
+<label><input type="radio" name="q3" value="b"> 81</label><br>
+<label><input type="radio" name="q3" value="c"> 99</label>
+</div>
+
+<button type="button" onclick="submitTest()">Submit Test</button>
+
+</form>
+
+<div class="result" id="result"></div>
+
+<script>
+let timeLeft = 60;
+let timerElement = document.getElementById("timer");
+
+let timer = setInterval(function(){
+timeLeft--;
+timerElement.innerHTML = "Time Left: " + timeLeft + " sec";
+
+if(timeLeft <= 0){
+clearInterval(timer);
+submitTest();
+}
+}, 1000);
+
+function submitTest(){
+clearInterval(timer);
+
+let score = 0;
+
+if(document.querySelector('input[name="q1"]:checked')?.value === "b") score++;
+if(document.querySelector('input[name="q2"]:checked')?.value === "b") score++;
+if(document.querySelector('input[name="q3"]:checked')?.value === "b") score++;
+
+document.getElementById("result").innerHTML =
+"⏱️ Test Submitted! Your Score: " + score + " / 3";
+
+localStorage.setItem("lastScore", score);
+}
+</script>
+
+</body>
+</html>
