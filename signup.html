@@ -20,7 +20,7 @@ background:#1e293b;
 padding:40px;
 border-radius:12px;
 width:90%;
-max-width:350px;
+max-width:360px;
 text-align:center;
 box-shadow:0 10px 30px rgba(0,0,0,0.5);
 }
@@ -67,9 +67,9 @@ text-decoration:none;
 <h2>Rao Academy</h2>
 <p>Create Student Account</p>
 
-<input type="text" placeholder="Full Name" required>
-<input type="email" placeholder="Email Address" required>
-<input type="password" placeholder="Create Password" required>
+<input type="text" id="name" placeholder="Full Name" required>
+<input type="email" id="email" placeholder="Email Address" required>
+<input type="password" id="password" placeholder="Create Password" required>
 
 <button onclick="signup()">Sign Up</button>
 
@@ -80,7 +80,21 @@ Already have an account? <a href="login.html">Login</a>
 
 <script>
 function signup(){
-alert("Signup system will be connected with dashboard in next upgrade.");
+let name = document.getElementById("name").value;
+let email = document.getElementById("email").value;
+let password = document.getElementById("password").value;
+
+if(name === "" || email === "" || password === ""){
+alert("Please fill all fields");
+return;
+}
+
+// Save basic data in browser (temporary student system)
+localStorage.setItem("studentName", name);
+localStorage.setItem("studentEmail", email);
+
+// Redirect to dashboard
+window.location.href = "dashboard.html";
 }
 </script>
 
