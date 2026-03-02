@@ -7,18 +7,16 @@
 
 <style>
 body{
-font-family: Arial;
+font-family: Arial, sans-serif;
 background:#020617;
 color:white;
 margin:0;
 padding:20px;
 }
-
 h1{
 text-align:center;
 color:gold;
 }
-
 .timer{
 text-align:center;
 font-size:22px;
@@ -26,14 +24,13 @@ color:#38bdf8;
 margin-bottom:20px;
 font-weight:bold;
 }
-
 .question{
 background:#1e293b;
 padding:20px;
 margin:15px 0;
 border-radius:12px;
+box-shadow:0 4px 15px rgba(0,0,0,0.4);
 }
-
 button{
 margin-top:25px;
 padding:14px 30px;
@@ -48,7 +45,9 @@ margin-left:auto;
 margin-right:auto;
 font-weight:bold;
 }
-
+button:hover{
+background:#ffd700;
+}
 .result{
 text-align:center;
 font-size:24px;
@@ -88,7 +87,6 @@ font-weight:bold;
 </div>
 
 <button type="button" onclick="submitTest()">Submit Test</button>
-
 </form>
 
 <div class="result" id="result"></div>
